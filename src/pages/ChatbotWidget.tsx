@@ -517,7 +517,7 @@ const ChatbotWidget: React.FC = () => {
             lineHeight: '1.5',
             overflowX: 'auto'
           }}>
-{`<script src="https://your-domain.com/chatbot-widget.iife.js"></script>
+{`<script src="https://chat-base-seven.vercel.app/chatbot-widget.iife.js"></script>
 <script>
   ChatbotWidget.init({
     chatbotId: 'demo',
