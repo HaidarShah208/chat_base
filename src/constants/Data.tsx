@@ -18,7 +18,7 @@ import PlansIcon from "../../public/icons/svg/PlansIcon";
   export const settingsSidebarTabs = [
     { label: "General", icon: <Settings className="w-5 h-5" />, route: "general" },
     { label: "Members", icon: <Users className="w-5 h-5" />, route: "members" },
-    { label: "Plans", icon: <PlansIcon className="w-5 h-5" />, route: "plans" },
+    { label: "Plans", icon: <PlansIcon />, route: "plans" },
     { label: "Billing", icon: <CreditCard className="w-5 h-5" />, route: "billing" },
 
   ];

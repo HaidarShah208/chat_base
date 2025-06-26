@@ -290,7 +290,7 @@ const ChatInterfaceTab = ({ }: ChatInterfaceTabProps) => {
                     </div>
                 </div>
             </div>
-            <SaveButton onClick={() => { }} />
+            <SaveButton />
         </div>
     )
 }

@@ -64,8 +64,8 @@ class ChatbotScriptLoader {
       config.welcomeMessage = script.getAttribute('data-welcome-message') || 'Hi! How can I help you today?';
       config.placeholder = script.getAttribute('data-placeholder') || 'Type your message...';
       config.poweredByText = script.getAttribute('data-powered-by') || 'Powered by ChatBase';
-      config.apiEndpoint = script.getAttribute('data-api-endpoint');
-      config.apiKey = script.getAttribute('data-api-key');
+      config.apiEndpoint = script.getAttribute('data-api-endpoint') || undefined;
+      config.apiKey = script.getAttribute('data-api-key') || undefined;
 
       if (Object.keys(config).length > 0) {
         this.initializeWidget(config);
@@ -272,7 +272,6 @@ class ChatbotScriptLoader {
     const closeBtn = document.getElementById('chatbot-close');
     const sendBtn = document.getElementById('chatbot-send');
     const input = document.getElementById('chatbot-input') as HTMLInputElement;
-    const widget = document.getElementById('chatbot-widget');
 
     if (toggleBtn) {
       toggleBtn.addEventListener('click', () => this.toggleWidget());
@@ -405,6 +404,4 @@ class ChatbotScriptLoader {
 new ChatbotScriptLoader();
 
 // Export for module systems
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = ChatbotScriptLoader;
-} 
+ 
