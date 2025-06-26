@@ -18,12 +18,14 @@ import Contacts from "../pages/Contacts";
 import Actions from "../pages/Actions";
 import ActionsTab from "../components/Actions/ActionsTab";
 import IntegrationsTab from "../components/Actions/IntegrationsTab";
+import ChatbotWidget from "../pages/ChatbotWidget";
 
 const AppRoute = () => {
   return (
     <>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/chatbot-widget" element={<ChatbotWidget />} />
         <Route element={<MainLayout />}>
           <Route path="/dashboard/chatbot" element={<Chatbot />} />
           <Route path="/dashboard/usage" element={<Usage />} />

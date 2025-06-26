@@ -75,16 +75,15 @@ const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
     setInputValue('');
     setIsLoading(true);
 
-    // Call the onMessageSend callback if provided
     if (onMessageSend) {
       onMessageSend(inputValue);
     }
 
-    // Simulate AI response (replace with actual API call)
+    // Simulate AI response
     setTimeout(() => {
       const aiMessage: Message = {
         id: messages.length + 2,
-        text: `Thanks for your message: "${inputValue}". This is a demo response. In a real implementation, you would connect this to your AI backend.`,
+        text: `Thanks for your message: "${inputValue}". This is a demo response.`,
         isUser: false,
         timestamp: new Date()
       };
@@ -121,7 +120,6 @@ const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
 
   return (
     <div className="chatbot-widget-container" style={{ position: 'fixed', zIndex: 9999 }}>
-      {/* Chat Widget */}
       {isOpen && (
         <div 
           className={`chatbot-widget ${widgetClasses}`}
@@ -138,7 +136,6 @@ const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
             border: '1px solid #e5e7eb'
           }}
         >
-          {/* Header */}
           <div 
             className="chatbot-header"
             style={{
@@ -163,17 +160,13 @@ const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
                 color: 'white',
                 cursor: 'pointer',
                 padding: '4px',
-                borderRadius: '4px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
+                borderRadius: '4px'
               }}
             >
               <X size={16} />
             </button>
           </div>
 
-          {/* Messages */}
           <div 
             className="chatbot-messages"
             style={{
@@ -230,7 +223,6 @@ const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input */}
           <div 
             className="chatbot-input"
             style={{
@@ -280,7 +272,6 @@ const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
             </button>
           </div>
 
-          {/* Footer */}
           <div 
             className="chatbot-footer"
             style={{
@@ -297,7 +288,6 @@ const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
         </div>
       )}
 
-      {/* Toggle Button */}
       <button
         onClick={toggleWidget}
         className={`chatbot-toggle ${widgetClasses}`}
