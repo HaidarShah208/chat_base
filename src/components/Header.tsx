@@ -53,9 +53,11 @@ const Header = () => {
           </div>
 
           <div className="hidden lg:flex items-center gap-6">
-            <a href="#" className="text-sm text-gray-600 hover:text-black font-medium">
+          <Link to='/chatbotwidget'>
+          <a href="#" className="text-sm text-gray-600 hover:text-black font-medium">
               Docs
             </a>
+          </Link>
             <a href="#" className="text-sm text-gray-600 hover:text-black font-medium">
               Help
             </a>

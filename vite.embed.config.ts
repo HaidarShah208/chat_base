@@ -1,15 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/embed/script-loader.ts'),
+      entry: 'src/embed/script-loader.ts',
       name: 'ChatbotWidget',
       fileName: 'chatbot-widget',
-      formats: ['iife', 'es']
+      formats: ['iife']
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
@@ -17,17 +16,21 @@ export default defineConfig({
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM'
-        }
+        },
+        extend: true
       }
     },
     outDir: 'dist/embed',
     emptyOutDir: true,
-    sourcemap: true,
+    sourcemap: false,
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: false,
         drop_debugger: true
+      },
+      format: {
+        comments: false
       }
     }
   },

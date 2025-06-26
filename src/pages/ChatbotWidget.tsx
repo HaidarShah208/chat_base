@@ -21,8 +21,8 @@ interface ChatbotWidgetProps {
   onWidgetClose?: () => void;
 }
 
-const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
-  // chatbotId = 'default',
+// The actual widget component
+const ChatbotWidgetComponent: React.FC<ChatbotWidgetProps> = ({
   position = 'bottom-right',
   primaryColor = '#000000',
   title = 'Chat Support',
@@ -343,6 +343,253 @@ const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
           background: #9ca3af;
         }
       `}</style>
+    </div>
+  );
+};
+
+// The demo page component
+const ChatbotWidget: React.FC = () => {
+  const [selectedPosition, setSelectedPosition] = useState<'bottom-right' | 'bottom-left' | 'top-right' | 'top-left'>('bottom-right');
+  const [selectedColor, setSelectedColor] = useState('#3b82f6');
+  const [customTitle, setCustomTitle] = useState('Support Chat');
+
+  return (
+    <div style={{ 
+      minHeight: '100vh', 
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      padding: '20px',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        background: 'white',
+        borderRadius: '12px',
+        padding: '40px',
+        boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)'
+      }}>
+        <h1 style={{ 
+          textAlign: 'center', 
+          color: '#333', 
+          marginBottom: '30px',
+          fontSize: '2.5rem',
+          fontWeight: 'bold'
+        }}>
+          🤖 Chatbot Widget Demo
+        </h1>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '40px',
+          marginBottom: '40px'
+        }}>
+          {/* Configuration Panel */}
+          <div style={{
+            background: '#f9fafb',
+            padding: '24px',
+            borderRadius: '8px',
+            border: '1px solid #e5e7eb'
+          }}>
+            <h2 style={{ color: '#374151', marginTop: 0, marginBottom: '20px' }}>
+              Widget Configuration
+            </h2>
+
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                Position:
+              </label>
+              <select 
+                value={selectedPosition}
+                onChange={(e) => setSelectedPosition(e.target.value as any)}
+                style={{
+                  width: '100%',
+                  padding: '8px 12px',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '6px',
+                  fontSize: '14px'
+                }}
+              >
+                <option value="bottom-right">Bottom Right</option>
+                <option value="bottom-left">Bottom Left</option>
+                <option value="top-right">Top Right</option>
+                <option value="top-left">Top Left</option>
+              </select>
+            </div>
+
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                Primary Color:
+              </label>
+              <input
+                type="color"
+                value={selectedColor}
+                onChange={(e) => setSelectedColor(e.target.value)}
+                style={{
+                  width: '100%',
+                  height: '40px',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '6px',
+                  cursor: 'pointer'
+                }}
+              />
+            </div>
+
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                Title:
+              </label>
+              <input
+                type="text"
+                value={customTitle}
+                onChange={(e) => setCustomTitle(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '8px 12px',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '6px',
+                  fontSize: '14px'
+                }}
+              />
+            </div>
+
+            <div style={{
+              background: '#dbeafe',
+              padding: '16px',
+              borderRadius: '6px',
+              border: '1px solid #93c5fd'
+            }}>
+              <h3 style={{ margin: '0 0 12px 0', color: '#1e40af' }}>How to Use:</h3>
+              <p style={{ margin: 0, color: '#1e40af', fontSize: '14px' }}>
+                1. Configure the widget settings above<br/>
+                2. Click the chat button in the bottom-right corner<br/>
+                3. Try sending a message to see the demo response
+              </p>
+            </div>
+          </div>
+
+          {/* Preview Area */}
+          <div style={{
+            background: '#f9fafb',
+            padding: '24px',
+            borderRadius: '8px',
+            border: '1px solid #e5e7eb',
+            minHeight: '400px',
+            position: 'relative'
+          }}>
+            <h2 style={{ color: '#374151', marginTop: 0, marginBottom: '20px' }}>
+              Preview Area
+            </h2>
+            <p style={{ color: '#6b7280', marginBottom: '20px' }}>
+              This is a simulated website area. The chatbot widget will appear as a floating button.
+            </p>
+            
+            <div style={{
+              background: 'white',
+              border: '2px dashed #d1d5db',
+              borderRadius: '8px',
+              padding: '40px',
+              textAlign: 'center',
+              color: '#6b7280'
+            }}>
+              <h3 style={{ margin: '0 0 12px 0' }}>Your Website Content</h3>
+              <p style={{ margin: 0 }}>
+                This is where your website content would go. The chatbot widget will float over this content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Integration Code */}
+        <div style={{
+          background: '#1f2937',
+          color: '#f9fafb',
+          padding: '24px',
+          borderRadius: '8px',
+          marginBottom: '20px'
+        }}>
+          <h3 style={{ margin: '0 0 16px 0', color: '#fbbf24' }}>
+            Integration Code:
+          </h3>
+          <pre style={{
+            margin: 0,
+            fontSize: '14px',
+            lineHeight: '1.5',
+            overflowX: 'auto'
+          }}>
+{`<script src="https://your-domain.com/chatbot-widget.iife.js"></script>
+<script>
+  ChatbotWidget.init({
+    chatbotId: 'demo',
+    position: '${selectedPosition}',
+    primaryColor: '${selectedColor}',
+    title: '${customTitle}',
+    welcomeMessage: 'Hello! How can I help you today?'
+  });
+</script>`}
+          </pre>
+        </div>
+
+        {/* Features */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '20px'
+        }}>
+          <div style={{
+            background: '#f9fafb',
+            padding: '20px',
+            borderRadius: '8px',
+            border: '1px solid #e5e7eb'
+          }}>
+            <h3 style={{ color: '#374151', marginTop: 0 }}>🎨 Customizable</h3>
+            <p style={{ color: '#6b7280', marginBottom: 0 }}>
+              Change colors, position, and messages to match your brand.
+            </p>
+          </div>
+          <div style={{
+            background: '#f9fafb',
+            padding: '20px',
+            borderRadius: '8px',
+            border: '1px solid #e5e7eb'
+          }}>
+            <h3 style={{ color: '#374151', marginTop: 0 }}>📱 Responsive</h3>
+            <p style={{ color: '#6b7280', marginBottom: 0 }}>
+              Works perfectly on desktop, tablet, and mobile devices.
+            </p>
+          </div>
+          <div style={{
+            background: '#f9fafb',
+            padding: '20px',
+            borderRadius: '8px',
+            border: '1px solid #e5e7eb'
+          }}>
+            <h3 style={{ color: '#374151', marginTop: 0 }}>⚡ Lightweight</h3>
+            <p style={{ color: '#6b7280', marginBottom: 0 }}>
+              Minimal footprint with no external dependencies required.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* The actual widget */}
+      <ChatbotWidgetComponent
+        position={selectedPosition}
+        primaryColor={selectedColor}
+        title={customTitle}
+        welcomeMessage="Welcome to the demo! This is how the chatbot widget looks and works."
+        placeholder="Ask me anything..."
+        poweredByText="ChatBase Clone"
+        onMessageSend={(message) => {
+          console.log('Message sent:', message);
+        }}
+        onWidgetOpen={() => {
+          console.log('Widget opened');
+        }}
+        onWidgetClose={() => {
+          console.log('Widget closed');
+        }}
+      />
     </div>
   );
 };
