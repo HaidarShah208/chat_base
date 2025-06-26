@@ -3,7 +3,7 @@ import { useState, useRef, useCallback } from "react"
 import { formatButtons } from "../constants/Data"
 
 export default function RichTextFooter() {
-  const [footerText, setFooterText] = useState("")
+  const [, setFooterText] = useState("")
   const [charCount, setCharCount] = useState(0)
   const editorRef = useRef<HTMLDivElement>(null)
   const maxLength = 200

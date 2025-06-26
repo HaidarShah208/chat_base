@@ -1,6 +1,6 @@
 import { InfoIcon } from "lucide-react"
 import { instructionOptions, modelOptions } from "../../constants/DropdownOptions"
-import type { AITabProps } from "../../types/types"
+import type { AITabProps, OptionWithIcon } from "../../types/types"
 import SaveButton from "../Form/SaveButton"
 import Dropdown from "../Dropdown"
 
@@ -46,7 +46,7 @@ const AITab = ({
               <Dropdown
                 value={instructionType}
                 onChange={setInstructionType} 
-                options={instructionOptions}
+                options={instructionOptions as OptionWithIcon[]}
                 placeholder="Select a prompt"
                 dropdownWidth="w-52"
               />
@@ -89,7 +89,7 @@ const AITab = ({
           </div>
         </div>
 
-      <SaveButton onClick={() => {}} />
+      <SaveButton />
       </div>
 
       <div className="bg-white rounded-xl border px-6 py-5 mb-10 shadow-sm mt-6">

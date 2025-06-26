@@ -48,7 +48,7 @@ const AgentSettingsPage = () => {
   const [phoneEnabled, setPhoneEnabled] = useState(true)
   const [phone, setPhone] = useState("Phone Number")
 
-  const [webhooks, setWebhooks] = useState([])
+  const [webhooks] = useState([])
 
   const [customDomains, setCustomDomains] = useState<string[]>([])
 

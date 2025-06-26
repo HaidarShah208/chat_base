@@ -22,7 +22,7 @@ interface ChatbotWidgetProps {
 }
 
 const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
-  chatbotId = 'default',
+  // chatbotId = 'default',
   position = 'bottom-right',
   primaryColor = '#000000',
   title = 'Chat Support',

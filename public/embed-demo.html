@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Widget Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .demo-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background: #f9fafb;
+        }
+        .demo-section h2 {
+            color: #374151;
+            margin-top: 0;
+        }
+        .code-block {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .copy-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .copy-btn:hover {
+            background: #2563eb;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .feature {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        .feature h3 {
+            color: #374151;
+            margin-top: 0;
+        }
+        .feature p {
+            color: #6b7280;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Chatbot Widget Demo</h1>
+        
+        <div class="demo-section">
+            <h2>Basic Implementation</h2>
+            <p>Add this script tag to your HTML to embed the chatbot widget:</p>
+            <div class="code-block">
+&lt;script src="https://your-domain.com/chatbot-widget.iife.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  ChatbotWidget.init({
+    chatbotId: 'demo',
+    position: 'bottom-right',
+    primaryColor: '#3b82f6',
+    title: 'Support Chat',
+    welcomeMessage: 'Hello! How can I help you today?'
+  });
+&lt;/script&gt;
+            </div>
+            <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        </div>
+
+        <div class="demo-section">
+            <h2>Advanced Configuration</h2>
+            <p>Configure the widget with custom settings:</p>
+            <div class="code-block">
+&lt;script src="https://your-domain.com/chatbot-widget.iife.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  ChatbotWidget.init({
+    chatbotId: 'custom',
+    position: 'bottom-left',
+    primaryColor: '#10b981',
+    title: 'AI Assistant',
+    welcomeMessage: 'Hi there! I\'m your AI assistant. What can I help you with?',
+    placeholder: 'Ask me anything...',
+    poweredByText: 'Powered by Your Brand',
+    apiEndpoint: 'https://your-api.com/chat',
+    apiKey: 'your-api-key'
+  });
+&lt;/script&gt;
+            </div>
+            <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        </div>
+
+        <div class="demo-section">
+            <h2>Data Attributes Method</h2>
+            <p>Configure the widget using data attributes on the script tag:</p>
+            <div class="code-block">
+&lt;script 
+  src="https://your-domain.com/chatbot-widget.iife.js"
+  data-chatbot-id="demo"
+  data-position="bottom-right"
+  data-primary-color="#8b5cf6"
+  data-title="Help Desk"
+  data-welcome-message="Welcome! How can I assist you?"
+  data-placeholder="Type your question..."
+  data-powered-by="Your Company"
+&gt;&lt;/script&gt;
+            </div>
+            <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        </div>
+
+        <div class="demo-section">
+            <h2>Programmatic Control</h2>
+            <p>Control the widget programmatically:</p>
+            <div class="code-block">
+// Open the widget
+ChatbotWidget.open();
+
+// Close the widget
+ChatbotWidget.close();
+
+// Send a message programmatically
+ChatbotWidget.sendMessage('Hello from JavaScript!');
+
+// Destroy the widget
+ChatbotWidget.destroy();
+            </div>
+            <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>🎨 Customizable</h3>
+                <p>Customize colors, position, messages, and branding to match your website.</p>
+            </div>
+            <div class="feature">
+                <h3>📱 Responsive</h3>
+                <p>Works perfectly on desktop, tablet, and mobile devices.</p>
+            </div>
+            <div class="feature">
+                <h3>⚡ Lightweight</h3>
+                <p>Minimal footprint with no external dependencies required.</p>
+            </div>
+            <div class="feature">
+                <h3>🔧 Easy Integration</h3>
+                <p>Simple one-line script tag integration with no complex setup.</p>
+            </div>
+            <div class="feature">
+                <h3>🛡️ Secure</h3>
+                <p>Built with security best practices and API key support.</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Analytics Ready</h3>
+                <p>Built-in event tracking and analytics integration support.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.previousElementSibling;
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#3b82f6';
+                }, 2000);
+            });
+        }
+
+        // Demo widget initialization
+        setTimeout(() => {
+            if (typeof ChatbotWidget !== 'undefined') {
+                ChatbotWidget.init({
+                    chatbotId: 'demo',
+                    position: 'bottom-right',
+                    primaryColor: '#3b82f6',
+                    title: 'Demo Chat',
+                    welcomeMessage: 'Welcome to the demo! This is how the chatbot widget looks and works.',
+                    placeholder: 'Ask me anything...',
+                    poweredByText: 'ChatBase Clone'
+                });
+            }
+        }, 1000);
+    </script>
+</body>
+</html> 
