@@ -25,9 +25,9 @@ interface ChatbotWidgetProps {
 const ChatbotWidgetComponent: React.FC<ChatbotWidgetProps> = ({
   position = 'bottom-right',
   primaryColor = '#000000',
-  title = 'Chat Support',
+  title = 'Chat Supports',
   welcomeMessage = 'Hi! How can I help you today?',
-  placeholder = 'Type your message...',
+  placeholder = 'Type your messagesss...',
   poweredByText = 'Powered by ChatBase',
   onMessageSend,
   onWidgetOpen,
