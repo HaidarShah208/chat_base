@@ -26,7 +26,7 @@ const AppRoute = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route element={<MainLayout />}>
-        <Route path="/chatbot-widget" element={<ChatbotWidget />} />
+        <Route path="/chatbotwidget" element={<ChatbotWidget />} />
           <Route path="/dashboard/chatbot" element={<Chatbot />} />
           <Route path="/dashboard/usage" element={<Usage />} />
           <Route path="/dashboard/setting/:tab" element={<Setting />} />
