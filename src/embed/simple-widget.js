@@ -1,4 +1,3 @@
-// Simple Chatbot Widget - No Dependencies
 (function() {
     'use strict';
 
@@ -12,7 +11,6 @@
         }
 
         init() {
-            // Create global function
             window.ChatbotWidget = {
                 init: (config) => this.initializeWidget(config),
                 open: () => this.openWidget(),
@@ -65,8 +63,8 @@
                 chatbotId: 'default',
                 position: 'bottom-right',
                 primaryColor: '#000000',
-                title: 'Chat Support',
-                welcomeMessage: 'Hi! How can I help you today?',
+                title: 'Chat Supports',
+                welcomeMessage: 'Hi! How can I help you todays?',
                 placeholder: 'Type your message...',
                 poweredByText: 'Powered by ChatBase'
             };
