@@ -19,7 +19,6 @@
                 destroy: () => this.destroyWidget()
             };
 
-            // Auto-initialize if config is provided via data attributes
             this.autoInitialize();
         }
 
@@ -34,7 +33,7 @@
                 config.title = script.getAttribute('data-title') || 'Chat Supports';
                 config.welcomeMessage = script.getAttribute('data-welcome-message') || 'Hi! How can I help you todays?';
                 config.placeholder = script.getAttribute('data-placeholder') || 'Type your message...';
-                config.poweredByText = script.getAttribute('data-powered-by') || 'Powered by ChatBase';
+                config.poweredByText = script.getAttribute('data-powered-by') || 'Powered by sssssss Solutions';
 
                 if (Object.keys(config).length > 0) {
                     this.initializeWidget(config);
@@ -66,12 +65,11 @@
                 title: 'Chat Support',
                 welcomeMessage: 'Hi! How can I help you today?',
                 placeholder: 'Type your message...',
-                poweredByText: 'Powered by ChatBase'
+                poweredByText: 'Powered by StackUp Solutions'
             };
         }
 
         createWidget() {
-            // Create container
             this.container = document.createElement('div');
             this.container.id = 'chatbot-widget-container';
             this.container.style.cssText = `
@@ -81,14 +79,11 @@
             `;
             document.body.appendChild(this.container);
 
-            // Create widget HTML
             const widgetHTML = this.createWidgetHTML();
             this.container.innerHTML = widgetHTML;
 
-            // Add initial message
             this.addMessage(this.config.welcomeMessage, false);
 
-            // Attach event listeners
             this.attachEventListeners();
         }
 
@@ -277,11 +272,9 @@
             const message = input.value.trim();
             
             if (message) {
-                // Add user message
                 this.addMessage(message, true);
                 input.value = '';
 
-                // Simulate AI response
                 setTimeout(() => {
                     this.addMessage(`Thanks for your message: "${message}". This is a demo response.`, false);
                 }, 1000);
@@ -327,6 +320,6 @@
         }
     }
 
-    // Initialize the widget
     new SimpleChatbotWidget();
 })(); 
+
