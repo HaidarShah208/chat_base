@@ -31,8 +31,8 @@
                 config.chatbotId = script.getAttribute('data-chatbot-id') || 'default';
                 config.position = script.getAttribute('data-position') || 'bottom-right';
                 config.primaryColor = script.getAttribute('data-primary-color') || '#000000';
-                config.title = script.getAttribute('data-title') || 'Chat Support';
-                config.welcomeMessage = script.getAttribute('data-welcome-message') || 'Hi! How can I help you today?';
+                config.title = script.getAttribute('data-title') || 'Chat Supports';
+                config.welcomeMessage = script.getAttribute('data-welcome-message') || 'Hi! How can I help you todays?';
                 config.placeholder = script.getAttribute('data-placeholder') || 'Type your message...';
                 config.poweredByText = script.getAttribute('data-powered-by') || 'Powered by ChatBase';
 
@@ -63,8 +63,8 @@
                 chatbotId: 'default',
                 position: 'bottom-right',
                 primaryColor: '#000000',
-                title: 'Chat Supports',
-                welcomeMessage: 'Hi! How can I help you todays?',
+                title: 'Chat Support',
+                welcomeMessage: 'Hi! How can I help you today?',
                 placeholder: 'Type your message...',
                 poweredByText: 'Powered by ChatBase'
             };
